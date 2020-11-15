@@ -1,16 +1,15 @@
-import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_twitter_clone/helper/theme.dart';
 import 'package:flutter_twitter_clone/state/searchState.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
 import 'helper/routes.dart';
 import 'state/appState.dart';
-import 'package:provider/provider.dart';
 import 'state/authState.dart';
 import 'state/chats/chatState.dart';
 import 'state/feedState.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 import 'state/notificationState.dart';
 
 void main() async {

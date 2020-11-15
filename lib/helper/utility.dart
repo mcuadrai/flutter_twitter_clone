@@ -1,4 +1,4 @@
-import 'dart:async';
+import 'dart:developer' as developer;
 
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -9,7 +9,6 @@ import 'package:flutter_twitter_clone/widgets/newWidget/customLoader.dart';
 import 'package:intl/intl.dart';
 import 'package:share/share.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'dart:developer' as developer;
 
 final kAnalytics = FirebaseAnalytics();
 final DatabaseReference kDatabase = FirebaseDatabase.instance.reference();

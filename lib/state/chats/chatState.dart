@@ -1,13 +1,14 @@
 import 'dart:convert';
-import 'package:firebase_remote_config/firebase_remote_config.dart';
-import 'package:flutter_twitter_clone/helper/enum.dart';
-import 'package:http/http.dart' as http;
+
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:flutter_twitter_clone/model/chatModel.dart';
+import 'package:firebase_remote_config/firebase_remote_config.dart';
+import 'package:flutter_twitter_clone/helper/enum.dart';
 import 'package:flutter_twitter_clone/helper/utility.dart';
+import 'package:flutter_twitter_clone/model/chatModel.dart';
 import 'package:flutter_twitter_clone/model/user.dart';
 import 'package:flutter_twitter_clone/state/appState.dart';
+import 'package:http/http.dart' as http;
 
 class ChatState extends AppState {
   bool setIsChatScreenOpen;

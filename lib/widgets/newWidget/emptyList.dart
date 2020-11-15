@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_twitter_clone/helper/theme.dart';
 import 'package:flutter_twitter_clone/widgets/newWidget/title_text.dart';
+
 import '../customWidgets.dart';
 
 class EmptyList extends StatelessWidget {
