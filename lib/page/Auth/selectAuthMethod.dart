@@ -5,6 +5,7 @@ import 'package:flutter_twitter_clone/page/Auth/signup.dart';
 import 'package:flutter_twitter_clone/state/authState.dart';
 import 'package:flutter_twitter_clone/widgets/newWidget/title_text.dart';
 import 'package:provider/provider.dart';
+
 import '../homePage.dart';
 import 'signin.dart';
 
