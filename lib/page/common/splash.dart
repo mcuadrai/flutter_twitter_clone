@@ -45,10 +45,10 @@ class _SplashPageState extends State<SplashPage> {
   }
   /// Return installed app version 
   /// For testing purpose in debug mode update screen will not be open up
-  /// In  an old version of  realease app is installed on user's device then 
+  /// In  an old version of  release app is installed on user's device then
   /// User will not be able to see home screen 
   /// User will redirected to update app screen.
-  /// Once user update app with latest verson and back to app then user automatically redirected to welcome / Home page
+  /// Once user update app with latest version and back to app then user automatically redirected to welcome / Home page
   Future<bool> _checkAppVersion() async {
     PackageInfo packageInfo = await PackageInfo.fromPlatform();
     final currentAppVersion = "${packageInfo.version}";
@@ -56,7 +56,8 @@ class _SplashPageState extends State<SplashPage> {
     if (appVersion != currentAppVersion) {
       if(kDebugMode){
         cprint("Latest version of app is not installed on your system");
-        cprint("In debug mode we are not restrict devlopers to redirect to update screen");
+        cprint("currentAppVersion is $currentAppVersion and last version is $appVersion ");
+        cprint("In debug mode we are not restrict developers to redirect to update screen");
         cprint("Redirect devs to update screen can put other devs in confusion");
         return true;
       }
@@ -73,14 +74,14 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   /// Returns app version from firebase config
-  /// Fecth Latest app version from firebase Remote config
+  /// Fetch Latest app version from firebase Remote config
   /// To check current installed app version check [version] in pubspec.yaml
   /// you have to add latest app version in firebase remote config
   /// To fetch this key go to project setting in firebase
   /// Click on `cloud messaging` tab
   /// Copy server key from `Project credentials`
-  /// Now goto `Remote Congig` section in fireabse
-  /// Add [appVersion]  as paramerter key and below json in Default vslue
+  /// Now goto `Remote Config` section in fireabse
+  /// Add [appVersion]  as parameter key and below json in Default vslue
   ///  ``` json
   ///  {
   ///    "key": "1.0.0"
@@ -89,6 +90,10 @@ class _SplashPageState extends State<SplashPage> {
   /// For package detail check:-  https://pub.dev/packages/firebase_remote_config#-readme-tab-
   Future<String> _getAppVersionFromFirebaseConfig() async {
     final RemoteConfig remoteConfig = await RemoteConfig.instance;
+    //mdlc adding this two lines..
+    //final defaults = <String, dynamic>{'welcome': 'default welcome'};
+    //await remoteConfig.setDefaults(defaults);
+
     await remoteConfig.fetch(expiration: const Duration(minutes: 1));
     await remoteConfig.activateFetched();
     var data = remoteConfig.getString('appVersion');

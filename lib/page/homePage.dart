@@ -84,12 +84,12 @@ class _HomePageState extends State<HomePage> {
   void _checkNotification() {
     final authstate = Provider.of<AuthState>(context, listen: false);
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      var state = Provider.of<NotificationState>(context);
+      var state = Provider.of<NotificationState>(context, listen: false);
 
-      /// Check if user recieve chat notification from firebase
+      /// Check if user receive chat notification from firebase
       /// Redirect to chat screen
       /// `notificationSenderId` is a user id who sends you a message
-      /// `notificationReciverId` is a your user id.
+      /// `notificationReceiverId` is a your user id.
       if (state.notificationType == NotificationType.Message &&
           state.notificationReciverId == authstate.userModel.userId) {
         state.setNotificationType = null;
